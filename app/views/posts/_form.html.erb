@@ -1,5 +1,7 @@
-<%= simple_form_for @posts do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body %>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title, label: "Title" %>
+  <%= f.input :body, label: "Content" %>
   <%= f.button :submit %>
 <% end %>
+
+  
