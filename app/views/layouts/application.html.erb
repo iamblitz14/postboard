@@ -8,6 +8,33 @@
 </head>
 <body>
 
+	<div class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<%= link_to "Blitz Board", root_path, class: "navbar-brand" %>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Sign Up", new_user_registration_path %></li>
+				<% if user_signed_in? %>
+					<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+				<% else %>
+					<li><%= link_to "Log	 In", new_user_session_path %></li>
+				<% end %>
+			</ul>
+			<% if user_signed_in? %>
+				<p><%= link_to "Create new post", new_post_path, class: "navbar-right navbar-text navbar-link btn btn-default" %></p>
+			<% end %>
+		</div>
+	</div>
+
+
+	<% flash.each do |key, value| %>
+	    <div class="alert alert-<%= key %> alert-dismissable">
+	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	        <%= value %>
+	    </div>
+	<% end %>
+
 <%= yield %>
 
 </body>
