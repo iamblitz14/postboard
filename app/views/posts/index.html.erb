@@ -1,4 +1,8 @@
 <% @posts.each do |post| %>
-	<h3><%= post.title %></h3>
-	<%= link_to "View post", post_path(post), class: "btn btn-default" %>
+<div class="col-md-4">
+	<div class="message">
+		<h3 class="message-title"><%= post.title %></h3>
+		<%= link_to "View post", post_path(post), class: "btn custom" %>
+	</div>
+</div>
 <% end %>
