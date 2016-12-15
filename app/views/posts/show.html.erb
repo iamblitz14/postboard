@@ -2,7 +2,7 @@
 	<div class="message-show">
 		<h1><%= @post.title %></h1> 
 		<p class="message-posted-by">Posted by <%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %> ago</p>
-		<p class="message-desc"><%= @post.body %></p>
+		<p class="message-desc"><%= auto_link(@post.body) %></p>
 		<br />
 		<div class="links btn-group">
 				<%= link_to "Back to Posts", posts_path, class: "btn btn-default" %>
